@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { LanguageContext } from "../context/LanguageProvider";
 import { ArrowLeft } from "lucide-react";
 
-import { blogData } from "./blogData"; // ← import your data file
 
 export default function BlogDetails() {
   const { id } = useParams();
