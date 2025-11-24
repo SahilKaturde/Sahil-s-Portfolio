@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+::selection {
+  background-color: #f8f8f8ff; /* soft gray */
+  color: #000000;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=');
+  background-repeat: repeat;
+}
