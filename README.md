@@ -1,11 +1,11 @@
 # Sahil’s Portfolio (React)
 
-This is my personal portfolio website built using **React**.  
-The site supports both **Marathi and English**, includes multiple tabs, and uses a **dual-angle page layout** to present bilingual content clearly and professionally.
+This repository contains my personal portfolio application built using **React**.  
+The site supports **Marathi and English**, includes multiple tabs for navigation, and features a unique **dual-angle page** layout to display content in both languages clearly.
 
 ---
 
-## 🖼 Main Page Preview
+## 🖼 Main Page Layout
 
 ![Main Page Screenshot](screenshot/page1.png)
 
@@ -14,24 +14,36 @@ The site supports both **Marathi and English**, includes multiple tabs, and uses
 ## 🚀 Features
 
 - **Built with React**  
-- **Dual-language support:** Marathi & English  
-- **Multiple tabs** for clean navigation (Home, Projects, Blog, Writing, etc.)  
-- **Dual-angle page layout** to show content in both languages side-by-side  
-- **Lightweight and expandable** portfolio design  
+- **Dual Language Support** – Marathi & English  
+- **Multiple Tabs** for better navigation (Home, Projects, Writing, Blog, etc.)  
+- **Clean UI** designed for readability  
+- **Dual-angle page** to present bilingual content side-by-side  
+- **Additional screenshots** included below
 
 ---
 
-## 🛠 Backend Information
+## 📸 Additional Screenshots
 
-I have created a full backend using **Django**, including setups for APIs and data handling.  
-However, I **did not include the backend** in this repository.
+### 📌 Project Page  
+![Project Screenshot](screenshot/Project.png)
 
-### Why it’s not included?
-As a student, I currently have some financial constraints and expenses.  
-Hosting or deploying the backend would require extra cost and management, which I’m not able to cover right now.  
-So for the moment, this project includes only the frontend React code.
+### ✍️ Writing Page  
+![Writing Screenshot](screenshot/Writting.png)
 
-In the future, I plan to integrate the Django backend fully once I have the resources.
+### 📰 Blog Page  
+![Blog Screenshot](screenshot/blog.png)
+
+---
+
+## 🛠 Backend Information (Important)
+
+I have created a **complete Django backend setup** for this portfolio, but I did **not include it here**.
+
+**Reason:**  
+As a student, I currently have financial constraints and some personal expenses, so I cannot host or maintain the backend right now.  
+However, I have added some backend-related code that will be integrated in the future once hosting becomes possible.
+
+When my budget allows, I will **add and deploy the full Django backend**.
 
 ---
 
@@ -41,7 +53,7 @@ In the future, I plan to integrate the Django backend fully once I have the reso
 # Clone the repository
 git clone https://github.com/SahilKaturde/Sahil-s-Portfolio.git
 
-# Navigate into the project folder
+# Navigate into the project directory
 cd Sahil-s-Portfolio
 
 # Install dependencies
@@ -49,7 +61,7 @@ npm install
 # or
 yarn install
 
-# Run the development server
+# Start the development server
 npm start
 # or
 yarn start
