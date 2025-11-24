@@ -1,47 +1,37 @@
-# Sahil’s Portfolio (React Native)
+# Sahil’s Portfolio (React)
 
-This repository contains my personal mobile portfolio application built using **React Native**.  
-The app supports **Marathi and English**, includes multiple tabs for navigation, and features a unique **dual-angle page** layout to display content in both languages clearly.
+This is my personal portfolio website built using **React**.  
+The site supports both **Marathi and English**, includes multiple tabs, and uses a **dual-angle page layout** to present bilingual content clearly and professionally.
+
+---
+
+## 🖼 Main Page Preview
+
+![Main Page Screenshot](screenshot/page1.png)
 
 ---
 
 ## 🚀 Features
 
-- **Built with React Native** for cross-platform compatibility  
-- **Dual Language Support** – Marathi & English  
-- **Multiple Tabs** for better navigation (About, Projects, Blog, etc.)  
-- **Clean UI** designed for readability  
-- **Dual-angle page** to present bilingual content side-by-side  
-- **Screenshot previews** included
+- **Built with React**  
+- **Dual-language support:** Marathi & English  
+- **Multiple tabs** for clean navigation (Home, Projects, Blog, Writing, etc.)  
+- **Dual-angle page layout** to show content in both languages side-by-side  
+- **Lightweight and expandable** portfolio design  
 
 ---
 
-## 🖼 Screenshots
+## 🛠 Backend Information
 
-Here are some screenshots from the application:
+I have created a full backend using **Django**, including setups for APIs and data handling.  
+However, I **did not include the backend** in this repository.
 
-### 📌 Project Page  
-![Project Screenshot](screenshot/Project.png)
+### Why it’s not included?
+As a student, I currently have some financial constraints and expenses.  
+Hosting or deploying the backend would require extra cost and management, which I’m not able to cover right now.  
+So for the moment, this project includes only the frontend React code.
 
-### ✍️ Writing Page  
-![Writing Screenshot](screenshot/Writting.png)
-
-### 📰 Blog Page  
-![Blog Screenshot](screenshot/blog.png)
-
-### 📃 Main Page Layout  
-![Page 1 Screenshot](screenshot/page1.png)
-
----
-
-## 🛠 Backend Information (Important)
-
-I have created a **complete Django backend setup** for the portfolio, but I did **not include it here**.
-
-**Reason:**  
-As a student, I currently have financial constraints and some personal expenses, so I cannot host or maintain the backend right now. However, I have included some backend-related code for future integration.
-
-Once I am able to manage hosting costs and time, I will **integrate the Django backend fully** and update the project.
+In the future, I plan to integrate the Django backend fully once I have the resources.
 
 ---
 
@@ -51,7 +41,7 @@ Once I am able to manage hosting costs and time, I will **integrate the Django b
 # Clone the repository
 git clone https://github.com/SahilKaturde/Sahil-s-Portfolio.git
 
-# Navigate into the project directory
+# Navigate into the project folder
 cd Sahil-s-Portfolio
 
 # Install dependencies
@@ -59,8 +49,7 @@ npm install
 # or
 yarn install
 
-# Run the application on Android
-npx react-native run-android
-
-# Or on iOS
-npx react-native run-ios
+# Run the development server
+npm start
+# or
+yarn start
