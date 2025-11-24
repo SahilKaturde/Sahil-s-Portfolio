@@ -1,74 +1,85 @@
-import React, { useContext } from "react";
+import React from "react";
 import { X } from "lucide-react";
-import { LanguageContext } from "../context/LanguageProvider";
 
 export default function BlogDetailsModal({ blog, close }) {
-  const { lang, toggleLanguage } = useContext(LanguageContext);
-
-  // fallback if blog missing
   if (!blog) return null;
 
-  // choose text for preview in both languages
-  const textEN = blog.fullText?.en || "";
-  const textMR = blog.fullText?.mr || "";
+  const textMR = blog.fullText || "";
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-start p-4 z-[9999] overflow-y-auto">
-      <div className="bg-white w-full max-w-[900px] rounded-2xl shadow-xl p-6 my-8 overflow-y-auto relative font-mono">
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-start p-4 z-[9999] overflow-y-auto">
+
+      <div className="bg-white w-full max-w-[950px] rounded-2xl shadow-2xl p-8 my-10 relative font-mono">
+
+        {/* Close Button */}
         <button
           onClick={close}
-          className="absolute top-4 right-4 text-gray-500 hover:text-black transition"
+          className="absolute top-4 right-4 text-gray-600 hover:text-black transition"
         >
-          <X size={22} />
+          <X size={28} />
         </button>
 
-        <div className="flex items-center justify-between gap-4 mb-4">
-          <h1 className="text-2xl font-bold">{blog.title}</h1>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => toggleLanguage()}
-              className="text-sm px-3 py-1 rounded-md border"
-              title="Toggle language view"
-            >
-              Toggle Lang
-            </button>
-            <span className="text-xs opacity-60">{blog.date} • {blog.location}</span>
-          </div>
+        {/* HEADER */}
+        <div className="flex items-center justify-between mb-6">
+          <h1 className="text-3xl font-bold tracking-tight">{blog.title}</h1>
+
+          <span className="text-xs opacity-70">
+            {blog.date} • {blog.location}
+          </span>
         </div>
 
-        {/* Images: scattered layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          {blog.images?.map((src, idx) => (
+        {/* IMAGE GALLERY */}
+        <div className="w-full mb-10 space-y-6">
+
+          {/* MAIN IMAGE */}
+          {blog.images?.[0] && (
             <img
-              key={idx}
-              src={src}
-              alt={`blog-img-${idx}`}
-              className={`w-full ${idx === 0 ? "md:col-span-2 h-48 object-cover rounded-lg" : "h-44 object-cover rounded-lg"}`}
-              style={{ objectPosition: "center" }}
+              src={blog.images[0]}
+              className="w-full max-h-[450px] object-contain rounded-xl shadow-md bg-gray-100"
+              alt="main-img"
             />
-          ))}
-        </div>
+          )}
 
-        {/* Dual language side-by-side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="prose max-w-none">
-            <h3 className="text-lg font-semibold mb-2">English</h3>
-            <p className="text-gray-700 whitespace-pre-line leading-relaxed">{textEN}</p>
+          {/* NEXT 3 IMAGES */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {blog.images?.slice(1, 4).map((src, i) => (
+              <div key={i} className={`${i === 1 ? "md:col-span-2" : ""}`}>
+                <img
+                  src={src}
+                  className="w-full max-h-[350px] object-contain bg-gray-100 rounded-xl shadow-md"
+                  alt={`blog-img-${i}`}
+                />
+              </div>
+            ))}
           </div>
 
-          <div className="prose max-w-none">
-            <h3 className="text-lg font-semibold mb-2">मराठी</h3>
-            <p className="text-gray-700 whitespace-pre-line leading-relaxed">{textMR}</p>
+          {/* REMAINING IMAGES */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {blog.images?.slice(4).map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                className="w-full max-h-[250px] object-contain bg-gray-100 rounded-lg shadow"
+                alt={`blog-extra-${i}`}
+              />
+            ))}
           </div>
+
         </div>
 
-        {/* Footer / notes */}
-        <div className="mt-6 text-sm opacity-70">
-          <p>
-            Note: This is a static modal (no API) — the content is stored locally in the component.
-            Replace the text with your final edits when ready.
+        {/* MARATHI TEXT ONLY */}
+        <div>
+          <h3 className="text-2xl font-semibold mb-3 border-b pb-1">मराठी</h3>
+
+          <p className="text-gray-800 whitespace-pre-line leading-relaxed text-[16px]">
+            {textMR}
           </p>
         </div>
+
+        <footer className="mt-10 pt-4 border-t text-sm opacity-60">
+          हा ब्लॉग React Component मध्ये Static स्वरूपात संग्रहित आहे.
+        </footer>
+
       </div>
     </div>
   );
