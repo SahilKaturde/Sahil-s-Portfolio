@@ -29,24 +29,40 @@ export default function PortfolioTabs() {
   const ActiveComponent = tabs.find((t) => t.id === activeTab)?.component;
 
   return (
-    <div className="w-full max-w-[1100px] mx-auto px-6 py-16 font-mono">
+    <div className="w-full max-w-[1100px] mx-auto px-4 py-8 md:px-6 md:py-16 font-mono">
+      {/* Utility to hide scrollbar but allow scrolling */}
+      <style>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+
       {/* Header */}
-      <h2 className="text-3xl font-semibold text-center mb-10 tracking-tight">
+      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-10 tracking-tight">
         Explore My Work
       </h2>
 
-      {/* Tab Bar */}
-      <div className="flex justify-center mb-12">
-        <div className="inline-flex gap-2">
+      {/* Tab Bar Container */}
+      <div className="flex justify-center mb-8 md:mb-12">
+        <div className="
+          flex gap-2 overflow-x-auto no-scrollbar w-full 
+          px-2 pb-2 md:pb-0 md:w-auto md:justify-center
+        ">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => handleTabClick(tab.id)}
-              className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200
+              className={`
+                whitespace-nowrap flex-shrink-0 px-5 py-2.5 md:px-6 md:py-3 
+                rounded-xl text-sm font-medium transition-all duration-200
                 ${
                   activeTab === tab.id
                     ? "bg-black text-white shadow-lg scale-105"
-                    : "text-gray-600 hover:text-black hover:scale-105"
+                    : "text-gray-600 hover:text-black hover:scale-105 bg-gray-50 md:bg-transparent"
                 }
               `}
             >
