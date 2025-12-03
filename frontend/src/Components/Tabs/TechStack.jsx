@@ -5,7 +5,7 @@ const techData = [
   {
     category: "Programming Languages",
     icon: Code,
-    items: ["Python", "JavaScript", "C"],
+    items: ["Python", "JavaScript", "C/ C++"],
     description: "Syntactical Foundation"
   },
   {
